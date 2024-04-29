@@ -5,7 +5,7 @@ const resultado = document.getElementById('resultado-sorteio');
 
 const validarDados = (min, max) => {
 
-    if(min == '' || max == '') {
+    if(min === '' || max === '') {
         resultado.textContent = 'Preencha todos os campos';
         return false;
     }
@@ -20,6 +20,8 @@ const validarDados = (min, max) => {
         return false;
     }
 
+    return true;
+
 } 
 
 const sortear = () => {
@@ -27,12 +29,12 @@ const sortear = () => {
     const minimo = Math.ceil(inputMin.value);
     const maximo =  Math.floor(inputMax.value);
 
-    validarDados(minimo, maximo);
+    const dadosValidos = validarDados(minimo, maximo);
 
-    if(validarDados) {
+    if(dadosValidos) {
 
         const calculo = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
-        resultado.innerHTML = `Número sorteado: ${calculo}`;
+        resultado.textContent = `Número sorteado: ${calculo}`;
 
     }
 
