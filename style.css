@@ -5,6 +5,7 @@
     padding: 0;
     text-align: center;
     box-sizing: border-box;
+    font-family: var(--font-family);
 }
 
 :root {
@@ -13,6 +14,7 @@
     --font-color: #191717;
     --btn-color: #F97300;
     --font-family: 'Montserrat';
+    --border-radius: .3rem;
 }
 
 body {
@@ -21,7 +23,6 @@ body {
     justify-content: center;
     align-items: center;
 
-    font-family: var(--font-family);
     background-color: var(--main-bg-color);
     color: var(--font-color);
 }
@@ -34,10 +35,16 @@ body {
     max-width: 80%;
     padding: 2rem;
     background-color: var(--container-color);
+    border-radius: var(--border-radius);
+}
+
+header h1 {
+    font-size: 2.625rem;
 }
 
 .sorteador h3 {
-    margin-top: 2rem;
+    margin-top: 1.5rem;
+    font-size: 1.75rem;
 }
 
 .inputs {
@@ -50,11 +57,28 @@ body {
 
 .inputs p {
     font-weight: bold;
+    font-size: 1.25rem;
 }
 
 .inputs input {
+    border: none;
+    outline: none;
+    font-family: 'Montserrat';
+    font-size: 1rem;
+    font-weight: 600;
     padding: .5rem;
     width: 20%;
+    border-radius: var(--border-radius);
+}
+
+input[type=number]::-webkit-inner-spin-button { 
+    -webkit-appearance: none;
+    
+}
+input[type=number] { 
+   -moz-appearance: textfield;
+   appearance: textfield;
+
 }
 
 .btn {
@@ -64,9 +88,27 @@ body {
     font-weight: bold;
     border: none;
     outline: none;
-    font-size: 1.2rem;
+    font-size: 1.125rem;
     padding: .5rem 1rem;
-    min-width: 40%;
+    min-width: 40%;  
     margin-top: 2rem;
     cursor: pointer;
+    border-radius: var(--border-radius);
+}
+
+.resultado {
+    margin-top: 2rem;
+}
+
+@media (max-width: 480px) {
+
+    .container {
+        min-height: 90%;
+        min-width: 95%;
+    }
+
+    header h1 {
+        margin: 2.5rem 0;
+    }
+
 }
