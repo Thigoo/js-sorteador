@@ -5,7 +5,7 @@ const resultado = document.getElementById('resultado-sorteio');
 
 const validarDados = (min, max) => {
 
-    if(min === '' || max === '') {
+    if(min === 0 || max === 0) {
         resultado.textContent = 'Preencha todos os campos';
         return false;
     }
