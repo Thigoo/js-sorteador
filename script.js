@@ -3,6 +3,9 @@ const inputMax = document.getElementById('max');
 const btn = document.getElementById('btn-sorteio');
 const resultado = document.getElementById('resultado-sorteio');
 
+const btnTema = document.getElementById('btn-tema');
+const tema = localStorage.getItem('tema');
+
 const estilizarResultado = (cor) => {
     resultado.style.backgroundColor = 'var(--main-bg-color)';
     resultado.style.borderRadius = 'var(--border-radius)';
@@ -52,3 +55,5 @@ const sortear = () => {
 }
 
 btn.addEventListener("click", sortear);
+// btnTema.addEventListener('click', trocarTema);
+

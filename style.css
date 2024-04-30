@@ -17,6 +17,13 @@
     --border-radius: .3rem;
 }
 
+.dark {
+    --main-bg-color: #747264;
+    --container-color: #191717;
+    --font-color: #E2DFD0;
+    --btn-color: #F97300;
+}
+
 body {
     height: 100vh;
     display: flex;
