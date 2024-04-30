@@ -3,19 +3,29 @@ const inputMax = document.getElementById('max');
 const btn = document.getElementById('btn-sorteio');
 const resultado = document.getElementById('resultado-sorteio');
 
+const estilizarResultado = (cor) => {
+    resultado.style.backgroundColor = 'var(--main-bg-color)';
+    resultado.style.borderRadius = 'var(--border-radius)';
+    resultado.style.padding = '.5rem';
+    resultado.style.color = cor;
+}
+
 const validarDados = (min, max) => {
 
     if(min === 0 || max === 0) {
+        estilizarResultado('red');
         resultado.textContent = 'Preencha todos os campos';
         return false;
     }
 
     if(min < 0 || max < 0) {
+        estilizarResultado('red');
         resultado.textContent = 'Os valores devem ser positivos';
         return false;       
     }
     
     if(min === max) {
+        estilizarResultado('red');
         resultado.textContent = 'Os valores não podem ser iguais';
         return false;
     }
@@ -34,6 +44,7 @@ const sortear = () => {
     if(dadosValidos) {
 
         const calculo = Math.floor(Math.random() * (maximo - minimo + 1)) + minimo;
+        estilizarResultado('var(--btn-color)')
         resultado.textContent = `Número sorteado: ${calculo}`;
 
     }
